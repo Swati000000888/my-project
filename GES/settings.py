@@ -19,14 +19,24 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
+LOGIN_URL = '/ges/login/'
+LOGIN_REDIRECT_URL = 'home_page'
+LOGOUT_REDIRECT_URL = 'login'
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-eb8f^)8m(!npxp@%7inw_y7=fwwa5w5a82%+_au3--clt0&)3t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+''
 
-ALLOWED_HOSTS = []
-
+ 
+ALLOWED_HOSTS = ["*", "ges.se"]
+CSRF_TRUSTED_ORIGINS = [
+    'https://ges.se',
+    'https://www.ges.se',
+    
+]
 
 # Application definition
 
