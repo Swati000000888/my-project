@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wind Energy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <span class="hamburger" onclick="toggleMenu()">☰</span>
+        <div class="menu" id="menu">
+            <a href="index.html">HOME</a>
+            <a href="wind.html">Wind</a>
+            <a href="hydro.html">Hydro</a>
+            <a href="solar.html">Solar</a>
+            <a href="geothermal.html">Geothermal</a>
+        </div>
+    </div>
+
+    <!-- Content for Wind Energy page -->
+    <section id="WIND">
+        <h2>Wind Energy</h2>
+        <p>Wind energy harnesses the power of the wind to generate electricity.</p>
+        <img src="wind.jpg" alt="Wind Turbines" class="energy-image">
+    </section>
+
+    <!-- JavaScript for responsive navbar -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            if (menu.style.display === "flex") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "flex";
+            }
+        }
+    </script>
+</body>
+</html>

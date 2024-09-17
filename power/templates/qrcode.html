@@ -1,0 +1,50 @@
+<!-- templates/your_template.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Page</title>
+    <style>
+        .qr-code-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .qr-code-image {
+            max-width: 300px;
+            max-height: 300px;
+        }
+
+        .download-button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="qr-code-container">
+        <!-- Display the QR code -->
+        <img id="qrCodeImage" class="qr-code-image" src="{% url 'generate_qr_code' %}" alt="Scan this QR Code" />
+
+        <!-- Button to download the QR code -->
+        <button id="downloadButton" class="download-button">Download QR Code</button>
+    </div>
+
+    <script>
+        // JavaScript to handle QR code download
+        document.getElementById("downloadButton").addEventListener("click", function() {
+            const qrCodeImage = document.getElementById("qrCodeImage");
+
+            // Create a temporary link element
+            const link = document.createElement('a');
+            link.href = qrCodeImage.src;
+            link.download = 'qr_code.png';  // Set the default download file name
+
+            // Trigger the download by simulating a click on the link
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
+</body>
+</html>

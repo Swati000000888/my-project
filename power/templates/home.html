@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Energy Sources</title>
+    <style>
+        /* General page styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            display: flex;
+            background-color: #2c6e49;
+            padding: 10px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            background-color: #3b7b57;
+            border-radius: 5px;
+        }
+
+        .navbar .hamburger {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .menu {
+            display: flex;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .navbar .hamburger {
+                display: block;
+            }
+        }
+
+        /* Section styles */
+        section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2c6e49;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <span class="hamburger" onclick="toggleMenu()">☰</span>
+        <div class="menu" id="menu">
+            <a href="index.html">HOME</a>
+            <a href="wind.html">Wind</a>
+            <a href="hydro.html">Hydro</a>
+            <a href="solar.html">Solar</a>
+            <a href="geothermal.html">Geothermal</a>
+        </div>
+    </div>
+
+    <!-- Content for HOME page -->
+    <section>
+        <h2>Welcome to Green Energy Sources</h2>
+        <p>Explore various sources of green energy by clicking on the links in the menu.</p>
+    </section>
+
+    <!-- JavaScript for responsive navbar -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            if (menu.style.display === "flex") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "flex";
+            }
+        }
+    </script>
+</body>
+</html>
