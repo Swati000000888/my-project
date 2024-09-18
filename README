@@ -1,7 +1,103 @@
-python manage.py makemigrations
+         DPP Project Documentation
 
-python manage.py migrate
 
-python manage.py collectstatic
+This document provides detailed instructions for setting up, running, and managing the DPP application.
 
-python manage.py runserver
+
+
+1. Pull the Latest Changes:
+Purpose: Pull the latest changes from the remote repository.
+
+Copy code
+    *git pull origin (main , master-branch, dpp-feedback)
+
+2. Push the Latest Changes:
+Purpose: Push local changes to the remote repository.
+
+Copy code
+     *git push origin (main, master-branch, dpp-feedback)
+
+Explanation: This command uploads your local changes to the (main, master-branch, dpp-feedback)  branch of the remote repository.
+
+   ###Script Directory: script
+File 1: monitoring.py
+This script monitors a directory for changes to PDF files (modifications and deletions) and sends updates to an API.
+
+##Variables to Configure:
+
+*API_URL: URL of the API endpoint to notify.
+*DIRECTORY: Directory path to monitor.
+*API_CALL_INTERVAL: Interval (in seconds) for making API calls.
+*BATCH_INTERVAL: Interval (in seconds) for batching file changes before calling the API.
+*DELETE_CHECK_DELAY: Delay (in seconds) before checking for deleted files.
+
+
+#Run Command:
+python3 script/monitoring.py
+
+File 2: upload_and_delete.py
+This FastAPI script provides endpoints for uploading and deleting PDF files.
+
+##Variables to Configure:
+
+*UPLOAD_DIRECTORY: Directory path to save uploaded files.
+*faiss_index_path: Path to the FAISS index file.
+*docstore_path: Path to the docstore.json file.
+
+
+#Run Command:
+python3 script/upload_and_delete.py
+
+
+
+3. Run Django Management Commands
+Create Admin Superuser
+To create an admin superuser for Django:
+
+   ###Start the Django Server
+
+python manage.py createsuperuser: To start the Django development server
+
+
+python3 manage.py runserver
+
+####Apply Migrations
+
+To create and apply database migrations:
+
+#python3 manage.py makemigrations products
+
+*Purpose:
+Generates migration files for changes in your Django models.
+
+#python3 manage.py migrate
+
+*Purpose:
+Updates the database schema to reflect changes made in your Django models.
+
+
+#python3 manage.py collectstatic
+
+*Purpose:
+To centralize and organize static files for efficient serving in a production environment.
+
+
+
+
+
+###Run Background Task for Fetching and Classifying Messages
+Install the required library:
+
+   pip install openai==0.28
+
+Start the custom command to fetch and classify messages:
+
+#Run Command:
+python manage.py fetch_and_classify
+
+Additional Notes
+Script Dependencies:  Ensure all necessary libraries are installed by checking the requirements.txt file or using pip install -r requirements.txt.
+
+Environment Variables: Configure environment variables as needed, especially for API keys and sensitive information.
+
+Error Handling: Check the logs for errors and address any issues that arise during script execution or server start-up.

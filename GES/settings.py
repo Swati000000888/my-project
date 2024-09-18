@@ -31,10 +31,11 @@ DEBUG = True
 ''
 
  
-ALLOWED_HOSTS = ["*", "GES.se"]
+ALLOWED_HOSTS = ["*", "my-project"]
 CSRF_TRUSTED_ORIGINS = [
-    'https://virtual.se',
-    'https://www.virtul.se',
+
+    'http://swati000000888.github.io/my-project/'
+
     
 ]
 
