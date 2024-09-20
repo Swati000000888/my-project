@@ -1,17 +1,5 @@
-
-
-
-
-#    DPP Project Documentation
-
-#
-
-
-![App Screenshot](http://127.0.0.1:8000/products/static/img/circular.jpg)
-
-
-#
-
+![Screenshot 2024-09-20 134347](https://github.com/user-attachments/assets/eff87fb0-3298-47c3-8c81-979f8bcd9a63)
+# DPP Project Documentation
 This document provides detailed instructions for setting up, running, and managing the DPP application.
 
    ### Prerequisites
@@ -25,16 +13,16 @@ Before starting, ensure you have the following:
    * Django Rest Framework
 
 
-#  ⚡Installation Guide:
+##  ⚡Installation Guide:
 
-   # Install Python
+   ### Install Python
 
  * Visit the official Python website:
 
   https://www.python.org/downloads/.
 
 
-  # Create and Activate Virtual Environment
+ ## Create and Activate Virtual Environment
 
  * It is recommended to create a virtual environment to isolate your project’s dependencies.
 
@@ -60,7 +48,7 @@ Copy code:
 
 
 
- # Install Django
+ ##  Install Django
 
 *  Open your terminal or command prompt.
 
@@ -70,12 +58,12 @@ Copy code:
 Copy code
 
           pip install django
-
+#
           django-admin --version
 
-  # Apply Migrations
+  ##  Apply Migrations
 
- ## To create and apply database migrations:
+ ###  To create and apply database migrations:
 
           python3 manage.py makemigrations
 
@@ -97,7 +85,7 @@ Purpose:
 * To centralize and organize static files for efficient serving in a production environment.
          
 
-# Project Setup
+##  Project Setup
 
 * Cloning the Repository
 
@@ -107,13 +95,13 @@ Copy code:
 
  #### git clone https://github.com/Solai-Tech/DPP.git
 
-### cd DPP
+#### cd DPP
 
- #### Run Django Management Commands
+ ### Run Django Management Commands
 
    * To create an admin superuser for Django:
 
-               python manage.py createsuperuser:
+               python manage.py createsuperuser
 
    * To start the Django development server
 
@@ -131,9 +119,9 @@ Copy code
 
          git pull origin (main , master-branch, dpp-feedback)
 
-# Script Directory: script
+##  Script Directory: script
 
-File 1: monitoring.py
+### File 1: monitoring.py
 
 This script monitors a directory for changes to PDF files (modifications and deletions) and sends updates to an API.
 
@@ -154,7 +142,7 @@ This script monitors a directory for changes to PDF files (modifications and del
 
             python3 script/monitoring.py
 
-File 2: upload_and_delete.py
+### File 2: upload_and_delete.py
 
 This FastAPI script provides endpoints for uploading and deleting PDF files.
 
@@ -169,26 +157,27 @@ This FastAPI script provides endpoints for uploading and deleting PDF files.
 
  * Run Command:
 
-            python3 script/upload_and_delete.py
+             python3 script/upload_and_delete.py
 
 
- ### Run Background Task for Fetching and Classifying Messages
+ ### File 3: Run Background Task for Fetching and Classifying Messages
 
-         Install the required library:
+Install the required library:
 
-     pip install openai==0.28
+          pip install openai==0.28
 
    * Start the custom command to fetch and classify messages:
 
-    Run Command:
+   Run Command:
 
           python manage.py fetch_and_classify
 
 
-# DFlow Integration Setup for DPP Project
+## Flowise Integration Setup for DPP Project
   Purpose:
 
-      DFlow is used to integrate AI-driven conversational agents and other automation tools into your Django project. By integrating DFlow, your project can handle user interactions, process chat messages, and automate workflows.
+* DFlow is used to integrate AI-driven conversational agents and other automation tools into your Django project. By integrating DFlow, your project can handle user interactions, process chat messages, and automate workflows.
+
 
 * Command to Install DFlow:
 
@@ -210,22 +199,19 @@ Copy code
 
 ## *  Additional Notes
 
-    ** Script Dependencies:
+* Script Dependencies:
 
+  
 Ensure all necessary libraries are installed by checking the requirements.txt file or using pip install -r requirements.txt.
 
-    **  Environment Variables: 
+* Environment Variables: 
 
 Configure environment variables as needed, especially for API keys and sensitive information.
 
-    ** Error Handling:
+* Error Handling:
 
 Check the logs for errors and address any issues that arise during script execution or server start-up.
-
 #
-
-# 
-
 ##  📄License
 
 © 2024 DPP - All Rights Reserved
