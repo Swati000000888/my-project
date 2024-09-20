@@ -1,7 +1,240 @@
-python manage.py makemigrations
 
-python manage.py migrate
 
-python manage.py collectstatic
 
-python manage.py runserver
+
+#    DPP Project Documentation
+
+#
+
+
+![App Screenshot](http://127.0.0.1:8000/products/static/img/circular.jpg)
+
+
+#
+
+This document provides detailed instructions for setting up, running, and managing the DPP application.
+
+   ### Prerequisites
+
+Before starting, ensure you have the following:
+
+   * Python (version 3.12 or higher)
+
+   * Django (latest stable version)
+
+   * Django Rest Framework
+
+
+#  ⚡Installation Guide:
+
+   # Install Python
+
+ * Visit the official Python website:
+
+  https://www.python.org/downloads/.
+
+
+  # Create and Activate Virtual Environment
+
+ * It is recommended to create a virtual environment to isolate your project’s dependencies.
+
+Create a virtual environment:
+
+Copy code:
+
+          python -m venv venv
+
+Activate the virtual environment:
+
+On Windows:
+
+Copy code:
+
+          venv\Scripts\activate
+
+On macOS/Linux:
+
+Copy code:
+
+         source venv/bin/activate
+
+
+
+ # Install Django
+
+*  Open your terminal or command prompt.
+
+     Use pip (Python’s package installer) to install Django globally:
+
+
+Copy code
+
+          pip install django
+
+          django-admin --version
+
+  # Apply Migrations
+
+ ## To create and apply database migrations:
+
+          python3 manage.py makemigrations
+
+Purpose:
+
+* Generates migration files for changes in your Django models.
+
+          python3 manage.py migrate
+
+Purpose:
+
+* Updates the database schema to reflect changes made in your Django models.
+
+
+         python3 manage.py collectstatic            
+
+Purpose:
+
+* To centralize and organize static files for efficient serving in a production environment.
+         
+
+# Project Setup
+
+* Cloning the Repository
+
+If you're using a version control system like Git, clone the project repository:
+
+Copy code:
+
+ #### git clone https://github.com/Solai-Tech/DPP.git
+
+### cd DPP
+
+ #### Run Django Management Commands
+
+   * To create an admin superuser for Django:
+
+               python manage.py createsuperuser:
+
+   * To start the Django development server
+
+              python3 manage.py runserver
+
+      ####   Open http://localhost:8000
+
+
+
+ ##  Pull the Latest Changes:
+   
+   * Purpose: Pull the latest changes from the remote repository.
+
+Copy code
+
+         git pull origin (main , master-branch, dpp-feedback)
+
+# Script Directory: script
+
+File 1: monitoring.py
+
+This script monitors a directory for changes to PDF files (modifications and deletions) and sends updates to an API.
+
+* Variables to Configure:
+
+   * API_URL: URL of the API endpoint to notify.
+
+   * DIRECTORY: Directory path to monitor.
+
+   * API_CALL_INTERVAL: Interval (in seconds) for making API calls.
+
+   * BATCH_INTERVAL: Interval (in seconds) for batching file changes before calling the API.
+
+  * DELETE_CHECK_DELAY: Delay (in seconds) before checking for deleted files.
+
+
+* Run Command:
+
+            python3 script/monitoring.py
+
+File 2: upload_and_delete.py
+
+This FastAPI script provides endpoints for uploading and deleting PDF files.
+
+* Variables to Configure:
+
+    * UPLOAD_DIRECTORY: Directory path to save uploaded files.
+
+    * faiss_index_path: Path to the FAISS index file.
+
+    * docstore_path: Path to the docstore.json file.
+
+
+ * Run Command:
+
+            python3 script/upload_and_delete.py
+
+
+ ### Run Background Task for Fetching and Classifying Messages
+
+         Install the required library:
+
+     pip install openai==0.28
+
+   * Start the custom command to fetch and classify messages:
+
+    Run Command:
+
+          python manage.py fetch_and_classify
+
+
+# DFlow Integration Setup for DPP Project
+  Purpose:
+
+      DFlow is used to integrate AI-driven conversational agents and other automation tools into your Django project. By integrating DFlow, your project can handle user interactions, process chat messages, and automate workflows.
+
+* Command to Install DFlow:
+
+Copy code
+
+             pip install dflow
+
+
+# Why Use DFlow in Django?:
+
+* Handle Interactions: DFlow helps manage real-time user interactions with AI agents.
+
+* API Integration: Use DFlow for sending and receiving data, like messages or user location.
+
+* Automated Responses: DFlow allows for the automation of workflows based on user input.
+
+* Once the package is installed, you can integrate DFlow with your project by setting up API communication and webhook handling as needed.
+
+
+## *  Additional Notes
+
+    ** Script Dependencies:
+
+Ensure all necessary libraries are installed by checking the requirements.txt file or using pip install -r requirements.txt.
+
+    **  Environment Variables: 
+
+Configure environment variables as needed, especially for API keys and sensitive information.
+
+    ** Error Handling:
+
+Check the logs for errors and address any issues that arise during script execution or server start-up.
+
+#
+
+# 
+
+##  📄License
+
+© 2024 DPP - All Rights Reserved
+
+Copyrights by - SolAI AB
+
+
+
+
+
+
+
