@@ -5,9 +5,7 @@
 #    DPP Project Documentation
 
 #
-
-![Screenshot 2024-09-20 134347](https://github.com/user-attachments/assets/3eb1b1df-6814-40a2-8a82-8bfbf84f37cc)
-
+![Screenshot 2024-09-20 134347](https://github.com/user-attachments/assets/5229d75f-33c5-4885-9a96-245641d63fb2)
 
 
 #
