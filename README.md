@@ -6,10 +6,7 @@
 
 #
 
-![Screenshot 2024-09-20 134347](https://github.com/user-attachments/assets/6c0de40d-c066-475f-8665-b0395ccdfdda)
-
-
-
+![Screenshot 2024-09-20 134347](https://github.com/user-attachments/assets/3eb1b1df-6814-40a2-8a82-8bfbf84f37cc)
 
 
 
