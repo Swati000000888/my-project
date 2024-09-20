@@ -7,7 +7,7 @@
 #
 
 
-![App Screenshot](http://127.0.0.1:8000/products/static/img/circular.jpg)
+![blob](https://github.com/user-attachments/assets/fda933fe-c671-48fd-b530-2471f1148e4a)
 
 
 #
